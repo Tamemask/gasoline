@@ -1,4 +1,4 @@
-package com.company;
+package part1.lesson01.task01.separate0;
 
 public class Main {
 
@@ -7,6 +7,8 @@ public class Main {
         double gasolineAmount = 50;
         double rawSalary = 70000;
         double secondsAmount = 3600;
+
+        System.out.println("Введите количество литров бензина");
 
         System.out.println(Gasoline.total(gasolineAmount));
         System.out.println(Salary.pure(rawSalary));
