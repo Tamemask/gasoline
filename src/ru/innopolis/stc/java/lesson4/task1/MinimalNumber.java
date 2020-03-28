@@ -3,7 +3,7 @@ package ru.innopolis.stc.java.lesson4.task1;
 import java.util.Scanner;
 
 public class MinimalNumber {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int i;
         int j;
