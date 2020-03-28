@@ -1,4 +1,4 @@
-package part1.lesson01.task01.separate2;
+package ru.innopolis.stc.java.lesson1.task2;
 
 import java.util.Scanner;
 

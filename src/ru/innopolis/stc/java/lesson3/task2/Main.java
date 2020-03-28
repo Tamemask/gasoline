@@ -1,4 +1,4 @@
-package part1.lesson03.task02;
+package ru.innopolis.stc.java.lesson3.task2;
 
 import java.util.Random;
 import java.util.Scanner;
