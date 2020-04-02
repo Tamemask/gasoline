@@ -22,4 +22,9 @@ public class Book {
         Chapter.startNewChapter(in.nextLine(), page);
     }
 
+    public static void addChapterToArr(Chapter chapter) {
+        int i = summ.length - 1;
+        summ[i] = chapter;
+    }
+
 }
