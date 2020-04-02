@@ -1,18 +1,25 @@
 package ru.innopolis.stc.java.lesson6.task1;
 
+import java.util.Scanner;
+
 public class Book {
     private final String bookName;
     String jenre;
-    Chapter[] summ;
+    static Chapter[] summ;
+    static Scanner in = new Scanner(System.in);
+
+    public static void addBookToCase(Book[] arrayBooks, String bookName){
+        Book book = new Book(bookName);
+        int i = arrayBooks.length - 1;
+        arrayBooks[i] = book;
+    }
 
     Book(String bookName){
         this.bookName = bookName;
     }
-
-    void startNewChapter(String nameChapter){
-        int i = summ.length - 1;
-        Chapter chapter = new Chapter(nameChapter);
-        summ[1] = chapter;
+    public static void startChapter(int page) {
+        System.out.println("Введите название главы");
+        Chapter.startNewChapter(in.nextLine(), page);
     }
 
 }
