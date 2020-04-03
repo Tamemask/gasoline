@@ -1,7 +1,6 @@
 package ru.innopolis.stc.java.lesson6.task1;
 
 import static ru.innopolis.stc.java.lesson6.task1.Book.addChapterToArr;
-import static ru.innopolis.stc.java.lesson6.task1.Book.summ;
 
 public class Chapter {
     private final String name;
