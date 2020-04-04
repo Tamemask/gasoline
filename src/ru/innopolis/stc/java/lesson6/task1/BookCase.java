@@ -2,17 +2,25 @@ package ru.innopolis.stc.java.lesson6.task1;
 
 import java.util.Scanner;
 
-/*public class BookCase {
-    private Book[] arrayBooks = new Book[50];
+public class BookCase {
+    private String bookCaseName;
+    private Book[] arrayBooks = new Book[10];
     private static int amount = 0;
-    private static String book;
 
-    public static void addBookToCase(String bookName) {
-        Book book = new Book(bookName);
-        arrayBooks[amount] = book;
+    BookCase(String bookCaseName) {
+        this.bookCaseName = bookCaseName;
+    }
+
+
+    public void addBookToCase(Book bookName) {
+        arrayBooks[amount] = bookName;
         amount++;
         System.out.println("Добавлена книга " + arrayBooks[amount].getName());
     }
 
+    public void addChapterToBook(Chapter chapter, int book, int numberOfChapter) {
+        arrayBooks[book].addChapter(chapter, numberOfChapter);
+    }
 
-}*/
+
+}
