@@ -17,4 +17,16 @@ public class Act {
     public void setNumber(int number) {
         this.number = number;
     }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String[] getArray() {
+        return array;
+    }
 }

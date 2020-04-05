@@ -17,4 +17,16 @@ public class Conrtact {
     public String[] getArray() {
         return array;
     }
+
+    public void setArray(String[] array) {
+        this.array = array;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
 }
