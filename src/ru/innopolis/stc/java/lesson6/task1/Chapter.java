@@ -10,9 +10,6 @@ public class Chapter {
         this.name = name;
         this.startPage = startPage;
     }
+//геттеры и сеттеры
 
-    public void startNewChapter(String nameChapter, int startPage) {
-        Chapter chapter = new Chapter(nameChapter, startPage);
-        //addChapterToArr(chapter);
-    }
 }

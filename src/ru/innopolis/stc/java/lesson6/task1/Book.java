@@ -1,20 +1,19 @@
 package ru.innopolis.stc.java.lesson6.task1;
 
-import java.util.Scanner;
 
 public class Book {
-    private static String bookName;
+    private final String bookName;
     private String jenre;
     private Chapter[] summ = new Chapter[10];
-    private Scanner in = new Scanner(System.in);
 
     Book(String bookName) {
         this.bookName = bookName;
     }
 
+//контроль переполнения массива
+    //геттер сеттер (в тч для жанра)
 
-
-    public static String getName() {
+    public String getName() {
         return bookName;
     }
 
