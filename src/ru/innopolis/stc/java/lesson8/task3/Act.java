@@ -2,9 +2,9 @@ package ru.innopolis.stc.java.lesson8.task3;
 
 public class Act {
     // В каждом сделать поля: номер, дата, список товаров (массив строк).
-    int number;
-    String date;
-    String[] array;
+    private int number;
+    private String date;
+    private String[] array;
 
     public void setArray(String[] array) {
         this.array = array;
