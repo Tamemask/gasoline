@@ -9,7 +9,6 @@ public class Main {
         Unicorn unicorn = new Unicorn();
         unicorn.setName("Star");
         System.out.println(duck.getName() + " " + bear.getName() + " " + unicorn.getName());
-
     }
 }
 
