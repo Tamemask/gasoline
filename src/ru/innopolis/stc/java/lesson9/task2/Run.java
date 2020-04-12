@@ -1,4 +1,4 @@
-package ru.innopolis.stc.java.lesson9.task1;
+package ru.innopolis.stc.java.lesson9.task2;
 
 public interface Run {
     void moveLegs();

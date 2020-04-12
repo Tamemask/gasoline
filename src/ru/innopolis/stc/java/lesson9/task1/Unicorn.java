@@ -1,5 +1,9 @@
 package ru.innopolis.stc.java.lesson9.task1;
 
+import ru.innopolis.stc.java.lesson9.task2.Fly;
+import ru.innopolis.stc.java.lesson9.task2.Run;
+import ru.innopolis.stc.java.lesson9.task2.Swim;
+
 public class Unicorn extends Animal implements Run, Fly, Swim {
     String name;
 

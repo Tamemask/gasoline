@@ -20,7 +20,3 @@ public abstract class Animal {
     public abstract String getName();
 }
 
-interface Fly {
-    void moveWings();
-}
-

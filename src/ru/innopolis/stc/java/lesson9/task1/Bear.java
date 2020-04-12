@@ -1,5 +1,8 @@
 package ru.innopolis.stc.java.lesson9.task1;
 
+import ru.innopolis.stc.java.lesson9.task2.Run;
+import ru.innopolis.stc.java.lesson9.task2.Swim;
+
 public class Bear extends Animal implements Run, Swim {
     String name;
 

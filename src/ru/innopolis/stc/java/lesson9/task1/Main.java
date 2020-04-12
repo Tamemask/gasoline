@@ -1,5 +1,9 @@
 package ru.innopolis.stc.java.lesson9.task1;
 
+import ru.innopolis.stc.java.lesson9.task2.Fly;
+import ru.innopolis.stc.java.lesson9.task2.Run;
+import ru.innopolis.stc.java.lesson9.task2.Swim;
+
 public class Main {
     public static void main(String[] args) {
         Bear b = new Bear();
@@ -34,7 +38,7 @@ public class Main {
         System.out.println(" ");
     }
 
-    static void fly (Fly ...f) {
+    static void fly(Fly... f) {
         for (int i = f.length-1; i >= 0; i--){
             f[i].moveWings();
         }

@@ -1,6 +1,10 @@
 package ru.innopolis.stc.java.lesson9.task1;
 
-public class Duck extends Animal implements Fly, Run, Swim{
+import ru.innopolis.stc.java.lesson9.task2.Fly;
+import ru.innopolis.stc.java.lesson9.task2.Run;
+import ru.innopolis.stc.java.lesson9.task2.Swim;
+
+public class Duck extends Animal implements Fly, Run, Swim {
     String name;
 
     @Override
