@@ -14,6 +14,11 @@ public class Unicorn extends Animal implements Run, Fly, Swim {
     }
 
     @Override
+    public void moveLegsVeryFast() {
+        System.out.println("no");
+    }
+
+    @Override
     public void moveWings() {
         System.out.println("Unicorn FLY without wings, but he has a rainbow");
     }
@@ -22,6 +27,11 @@ public class Unicorn extends Animal implements Run, Fly, Swim {
     @Override
     public void swimAsItCan() {
         System.out.println("Unicorn SWIM on serfing");
+    }
+
+    @Override
+    public void swimUnderWater() {
+
     }
 
     public void setName(String name) {

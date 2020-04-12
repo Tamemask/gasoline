@@ -18,7 +18,17 @@ public class Bear extends Animal implements Run, Swim {
     }
 
     @Override
+    public void moveLegsVeryFast() {
+        System.out.println("Bear RUNNING FAST!");
+    }
+
+    @Override
     public void swimAsItCan() {
         System.out.println("Bear SWIM, water can't save you from this muscular mountain, ROAR!");
+    }
+
+    @Override
+    public void swimUnderWater() {
+
     }
 }

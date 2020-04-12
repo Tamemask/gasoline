@@ -23,7 +23,17 @@ public class Duck extends Animal implements Fly, Run, Swim{
     }
 
     @Override
+    public void moveLegsVeryFast() {
+        System.out.println("it trying");
+    }
+
+    @Override
     public void swimAsItCan() {
         System.out.println("Duck SWIM. Not so cool, but it exists and can't kill you at least");
+    }
+
+    @Override
+    public void swimUnderWater() {
+
     }
 }

@@ -23,9 +23,4 @@ public abstract class Animal {
 interface Fly {
     void moveWings();
 }
-interface Run {
-    void moveLegs();
-}
-interface Swim{
-    void swimAsItCan();
-}
+
