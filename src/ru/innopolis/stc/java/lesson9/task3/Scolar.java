@@ -20,5 +20,7 @@ public class Scolar extends Human{
     @Override
     public void swimUnderWater() {
         System.out.println("Scolar swim like axe");
+        Human h = new Scolar();
+
     }
 }

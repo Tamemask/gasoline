@@ -6,7 +6,6 @@ public class Main {
         Lebowski big = new Lebowski();
         swim(s, big);
         run(s, big);
-        new Scolar() obj;
     }
 
     static void swim(Human... h) {
