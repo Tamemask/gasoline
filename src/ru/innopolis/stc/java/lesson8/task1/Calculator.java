@@ -20,7 +20,12 @@ package ru.innopolis.stc.java.lesson8.task1;
 Сумма двух целых чисел возвращает целое число и т.д.,
 но с одним исключением - деление двух целых чисел возвращает дробное число. */
 public class Calculator {
-
+    /**
+     *
+     * @param firstNumber
+     * @param secondNumber
+     * @return
+     */
     public static int summ(int firstNumber, int secondNumber) {
         firstNumber += secondNumber;
         return firstNumber;
@@ -49,6 +54,7 @@ public class Calculator {
 
     /**
      * написать джавадок к методу
+     *
      * @return
      */
     public static double procentation(double firstNumber, double secondNumber) {

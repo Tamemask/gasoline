@@ -24,8 +24,8 @@ public class Main {
      * Создать главный класс и метод main - это будет «Мама».
      * «Мама» дает ребенку «еду» и обрабатывает исключения ребенка.
      */
-    static RaisedChild child = new RaisedChild();
-    static Scanner in = new Scanner(System.in);
+    private static RaisedChild child = new RaisedChild();
+    private static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
         chooseFood();

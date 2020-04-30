@@ -1,8 +1,13 @@
 package ru.innopolis.stc.java.lesson12;
 
 public class RaisedChild {
-    boolean favorite;
+    private boolean favorite;
 
+    /** Сделать для конструктора ребенка
+     * рандомный выбор любимого блюда
+     * использовать метод класса enum.set
+     * @param favorite
+     */
     private void setFavorite(boolean favorite) {
         this.favorite = favorite;
     }
@@ -23,7 +28,7 @@ public class RaisedChild {
     }
 
     private void isThisFoodFavorite(String fromFridge) {
-        for (favoriteFood f : favoriteFood.values()) {
+        for (Food f : Food.values()) {
             if (f.name().equals(fromFridge)) {
                 setFavorite(true);
             } else {
@@ -31,8 +36,6 @@ public class RaisedChild {
             }
         }
     }
-
-    enum favoriteFood {МОРКОВЬ, ЯБЛОКО, КАША;}
 
 
 }

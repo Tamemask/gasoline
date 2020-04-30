@@ -1,6 +1,7 @@
 package ru.innopolis.stc.java.lesson7.task1;
 
-import org.w3c.dom.ls.LSOutput;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Scanner;
 
@@ -27,6 +28,8 @@ public class Main {
     //отделить операцию выбора от операции внесения
     //проверка, что денег достаточно
 
+    private static Logger log = LoggerFactory.getLogger(Main.class);
+
     enum Drink {COLA, ORANGE, MINERAL, LEMONADE;}
 
 
@@ -34,6 +37,7 @@ public class Main {
         static int priceOfProduct;
 
         Product(int productNumber) {
+            log.info( "productNumber in Product: {}", productNumber );
             switch (productNumber) {
                 case 1:
                     setPrice(100);
@@ -51,12 +55,14 @@ public class Main {
                     System.out.println("Введен не корректный номер, попробуйте еще раз.");
                     getProductNumber();
             }
-
+            log.info( "ran showPrice");
             showPrice();
+            log.info( "paidSumm set to: {}", paidSumm );
             paidSumm = in.nextInt();
         }
 
         void setPrice(int price) {
+            log.info( "priceOfProduct set to: {}", price );
             priceOfProduct = price;
         }
 
@@ -66,8 +72,10 @@ public class Main {
 
         private static void assertSumms() {
             if (paidSumm >= priceOfProduct) {
+                log.info("give a food and sdacha");
                 System.out.println("Заберите товар. Ваша сдача " + (paidSumm - priceOfProduct) + " рублей");
             } else {
+                log.info("paidSumm <= priceOfProduct, ran: takeMoreOrRefund()");
                 takeMoreOrRefund();
             }
         }
@@ -79,7 +87,9 @@ public class Main {
             int decision = in.nextInt();
             switch (decision) {
                 case 1:
+                    log.info("вывести на экран ", difference);
                     System.out.println("Введите " + difference + " рублей или больше");
+                    log.info("run takeMore()");
                     takeMore();
                     break;
                 default:

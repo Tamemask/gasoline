@@ -8,13 +8,13 @@ import java.util.Scanner;
  * и выводит результат в консоль!
  */
 public class Censor {
-    static Scanner in = new Scanner(System.in);
+    private static Scanner in = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    private static void main(String[] args) {
         setPhrase();
     }
 
-    static void setPhrase() {
+    private static void setPhrase() {
         System.out.println("Введите строку");
         String phrase = in.nextLine();
         if (phrase.contains("бяка")) {
