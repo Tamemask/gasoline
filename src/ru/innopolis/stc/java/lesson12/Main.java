@@ -29,7 +29,11 @@ public class Main {
 
     public static void main(String[] args) {
         chooseFood();
-        child.eatFood(in.nextLine());
+        try {
+            child.eatFood(in.nextLine());
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     static void chooseFood() {
