@@ -17,7 +17,7 @@ enum Food {
     public String getName() {
         return name;
     }
-    public Food getRandomFood() {
+    public static Food getRandomFood() {
         Random random = new Random();
         return values()[random.nextInt(values().length)];
     }

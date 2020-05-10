@@ -2,11 +2,15 @@ package ru.innopolis.stc.java.lesson12;
 
 public class RaisedChild {
 
-    /** Сделать для конструктора ребенка
+    /**
+     * Сделать для конструктора ребенка
      * рандомный выбор любимого блюда
      * использовать метод класса enum.set
+     *
      * @param
      */
+
+    String favoriteFood = Food.getRandomFood().getName();
 
 
     public void eatFood(String i) throws Exception {
@@ -24,18 +28,12 @@ public class RaisedChild {
     }
 
     private boolean isThisFoodFavorite(String fromFridge) {
-        boolean z = false;
-        for (Food f : Food.values()) {
-            String y = f.getName();
-            if (y.equals(fromFridge)) {
-                z = true;
-                break;
-            } else {
-                z = false;
-            }
+        boolean z;
+        if (favoriteFood.equals(fromFridge)) {
+            z = true;
+        } else {
+            z = false;
         }
         return z;
     }
-
-
 }
