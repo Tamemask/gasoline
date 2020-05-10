@@ -1,5 +1,7 @@
 package ru.innopolis.stc.java.lesson12;
 
+import java.util.Random;
+
 enum Food {
 
     CARROT("Морковь"),
@@ -14,5 +16,9 @@ enum Food {
 
     public String getName() {
         return name;
+    }
+    public Food getRandomFood() {
+        Random random = new Random();
+        return values()[random.nextInt(values().length)];
     }
 }
