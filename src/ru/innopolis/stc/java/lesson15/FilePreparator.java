@@ -1,6 +1,9 @@
 package ru.innopolis.stc.java.lesson15;
 import ru.innopolis.stc.java.lesson15.PreparatorMethods;
 
+import java.io.File;
+import java.io.IOException;
+
 public class FilePreparator {
     /**
      * Написать программу, которая будет создавать, переименовывать, копировать и удалять файл.
@@ -18,7 +21,7 @@ public class FilePreparator {
         pm.copyFile();
         pm.deleteFile();
 
-        DirectoryMethods.directoryConvoy();
+        //DirectoryMethods.directoryConvoy();
     }
 
 }
