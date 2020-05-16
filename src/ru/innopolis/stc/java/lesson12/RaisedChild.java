@@ -24,7 +24,6 @@ public class RaisedChild {
         } finally {
             System.out.println("Ребенок говорит: 'Спасибо, мама'");
         }
-
     }
 
     private boolean isThisFoodFavorite(String fromFridge) {

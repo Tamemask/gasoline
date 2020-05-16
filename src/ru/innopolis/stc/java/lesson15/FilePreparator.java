@@ -11,14 +11,14 @@ public class FilePreparator {
      * сдвигая название файла/каталога на соответствующее количество пробелов.
      */
     public static void main(String[] args) {
-        //PreparatorMethods pm = new PreparatorMethods();
+        PreparatorMethods pm = new PreparatorMethods();
 
-        /*PreparatorMethods.makeFile();
-        PreparatorMethods.renameFile();
-        PreparatorMethods.copyFile();
-        PreparatorMethods.deleteFile();
+        pm.makeFile();
+        pm.renameFile();
+        pm.copyFile();
+        pm.deleteFile();
 
-        DirectoryMethods.directoryConvoy();*/
+        DirectoryMethods.directoryConvoy();
     }
 
 }
