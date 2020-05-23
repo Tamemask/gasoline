@@ -1,5 +1,11 @@
 package ru.innopolis.stc.java.lesson7.task1;
 
+import javax.print.attribute.standard.OrientationRequested;
+import java.io.File;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.logging.*;
+
 public class Main {
 
     /*
@@ -24,13 +30,39 @@ public class Main {
      *
      * @param args
      */
-    public static void main(String[] args) {
+    public final static Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
-        Feedback.log.info("Run getProductNumber();");
+    public static void main(String[] args) {
+        LogManager.getLogManager().reset();
+        log.setLevel(Level.ALL);
+
+        ConsoleHandler ch = new ConsoleHandler();
+        ch.setLevel(Level.ALL);
+        log.addHandler(ch);
+
+        try{
+            FileHandler fh = new FileHandler("MyFile.log", true);
+            fh.setLevel(Level.ALL);
+            log.addHandler(fh);
+        }
+        catch (IOException e) {
+            log.log(Level.SEVERE, "File logger is not working", e);
+        }
+       /* try {
+            Properties prop = new Properties();
+            LogManager.getLogManager().readConfiguration(
+                    Main.class.getResourceAsStream("src\\ru\\innopolis\\stc\\java\\lesson14\\logging.properties"));
+        } catch (IOException e) {
+            System.err.println("Could not setup logger configuration: " + e.toString());
+        }*/
+        LogManager.getLogManager().reset();
+        log.setLevel(Level.ALL);
+
+        log.info("Run getProductNumber();");
         Feedback.getProductNumber();
-        Feedback.log.info("Run showProductPrice();");
+        log.info("Run showProductPrice();");
         Feedback.showProductPrice();
-        Feedback.log.info("Run Product.assertSumms();");
+        log.info("Run Product.assertSumms();");
         Feedback.Product.assertSumms();
     }
 

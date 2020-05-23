@@ -4,13 +4,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Scanner;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
 
 public class Feedback {
     public static Scanner in = new Scanner(System.in);
     public static int productNumber;
     public static int paidSumm;
-    public static Logger log = LoggerFactory.getLogger(Main.class);
-
 
 
     public static void getProductNumber() {
@@ -33,7 +33,7 @@ public class Feedback {
         static int priceOfProduct;
 
         Product(int productNumber) {
-            log.info( "productNumber in Product: {}", productNumber );
+            //Main.log.fine("productNumber in Product: {}", productNumber);
             switch (productNumber) {
                 case 1:
                     setPrice(100);
@@ -51,14 +51,14 @@ public class Feedback {
                     System.out.println("Введен не корректный номер, попробуйте еще раз.");
                     getProductNumber();
             }
-            log.info( "ran showPrice");
+            Main.log.log(Level.FINE,"ran showPrice");
             showPrice();
-            log.info( "paidSumm set to: {}", paidSumm );
+            Main.log.log(Level.FINE,"paidSumm set to: {}", paidSumm);
             paidSumm = in.nextInt();
         }
 
         void setPrice(int price) {
-            log.info( "priceOfProduct set to: {}", price );
+            Main.log.log(Level.FINE,"priceOfProduct set to: {}", price);
             priceOfProduct = price;
         }
 
@@ -68,24 +68,24 @@ public class Feedback {
 
         public static void assertSumms() {
             if (paidSumm >= priceOfProduct) {
-                log.info("give a food and sdacha");
+                Main.log.log(Level.FINE,"give a food and sdacha");
                 System.out.println("Заберите товар. Ваша сдача " + (paidSumm - priceOfProduct) + " рублей");
             } else {
-                log.info("paidSumm <= priceOfProduct, ran: takeMoreOrRefund()");
+                Main.log.log(Level.FINE,"paidSumm <= priceOfProduct, ran: takeMoreOrRefund()");
                 takeMoreOrRefund();
             }
         }
 
         private static void takeMoreOrRefund() {
-            int difference = priceOfProduct-paidSumm;
+            int difference = priceOfProduct - paidSumm;
             System.out.println("Не хватает " + difference + " рублей");
             System.out.println("Введите 1 чтобы внести еще средства. введите другое число, чтобы вернуть себе деньги");
             int decision = in.nextInt();
             switch (decision) {
                 case 1:
-                    log.info("вывести на экран ", difference);
+                    Main.log.log(Level.FINE,"вывести на экран ", difference);
                     System.out.println("Введите " + difference + " рублей или больше");
-                    log.info("run takeMore()");
+                    Main.log.log(Level.FINE,"run takeMore()");
                     takeMore();
                     break;
                 default:

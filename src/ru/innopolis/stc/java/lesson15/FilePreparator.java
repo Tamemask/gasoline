@@ -21,7 +21,7 @@ public class FilePreparator {
         pm.copyFile();
         pm.deleteFile();
 
-        //DirectoryMethods.directoryConvoy();
+
     }
 
 }
