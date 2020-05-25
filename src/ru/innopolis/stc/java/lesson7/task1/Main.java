@@ -1,9 +1,6 @@
 package ru.innopolis.stc.java.lesson7.task1;
 
-import javax.print.attribute.standard.OrientationRequested;
-import java.io.File;
 import java.io.IOException;
-import java.util.Properties;
 import java.util.logging.*;
 
 public class Main {
@@ -55,7 +52,6 @@ public class Main {
         } catch (IOException e) {
             System.err.println("Could not setup logger configuration: " + e.toString());
         }*/
-        LogManager.getLogManager().reset();
         log.setLevel(Level.ALL);
 
         log.info("Run getProductNumber();");
