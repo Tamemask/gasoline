@@ -15,12 +15,13 @@ public class FilePreparator {
      */
     public static void main(String[] args) {
         PreparatorMethods pm = new PreparatorMethods();
+        DirectoryMethods dm = new DirectoryMethods();
 
         pm.makeFile();
         pm.renameFile();
         pm.copyFile();
         pm.deleteFile();
-
+        dm.major();
 
     }
 

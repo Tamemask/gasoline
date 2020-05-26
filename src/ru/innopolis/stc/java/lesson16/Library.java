@@ -18,5 +18,7 @@ public class Library {
      * отсутствие файла на диске - не ошибка,
      * а частный случай пустой библиотеки
      */
-
+    public static void main(String[] args) {
+        UserInteraction.menu();
+    }
 }
