@@ -52,15 +52,8 @@ public class DirectoryMethods {
                 System.out.println(space + Paths.get(usersDirectory, filePaths[i]).toString());
             } else {
                 printDirectoryContents(Paths.get(usersDirectory, filePaths[i]).toString(), depthOfDirectory);
-                space+= " ";
+                space += " ";
             }
         }
     }
-
-/*    private String printDepthOfDirectory(int depthOfDirectory) {
-        for (int i = 0; i < depthOfDirectory; i++) {
-            space.concat(" ");
-        }
-        return space;
-    }*/
 }

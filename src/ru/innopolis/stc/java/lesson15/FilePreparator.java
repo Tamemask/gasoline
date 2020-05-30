@@ -13,10 +13,10 @@ public class FilePreparator {
         PreparatorMethods pm = new PreparatorMethods();
         DirectoryMethods dm = new DirectoryMethods();
 
-/*        pm.makeFile();
+        pm.makeFile();
         pm.renameFile();
         pm.copyFile();
-        pm.deleteFile();*/
+        pm.deleteFile();
         dm.printDirectoryContents();
 
     }
