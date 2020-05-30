@@ -1,15 +1,11 @@
 package ru.innopolis.stc.java.lesson15;
-import ru.innopolis.stc.java.lesson15.PreparatorMethods;
-
-import java.io.File;
-import java.io.IOException;
 
 public class FilePreparator {
     /**
      * Написать программу, которая будет создавать, переименовывать, копировать и удалять файл.
-     *
+     * <p>
      * Написать рекурсивный обход всех файлов и подкаталогов внутри заданного каталога.
-     *
+     * <p>
      * Дополнительное задание (необязательно): программа должна следить за глубиной рекурсии,
      * сдвигая название файла/каталога на соответствующее количество пробелов.
      */
@@ -17,11 +13,11 @@ public class FilePreparator {
         PreparatorMethods pm = new PreparatorMethods();
         DirectoryMethods dm = new DirectoryMethods();
 
-        pm.makeFile();
+/*        pm.makeFile();
         pm.renameFile();
         pm.copyFile();
-        pm.deleteFile();
-        dm.major();
+        pm.deleteFile();*/
+        dm.printDirectoryContents();
 
     }
 
