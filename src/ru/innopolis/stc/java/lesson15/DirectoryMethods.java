@@ -7,7 +7,7 @@ import java.util.*;
 public class DirectoryMethods {
     private static Scanner in = new Scanner(System.in);
     private static int depthOfDirectory = 1;
-    private String space;
+    private String space = " ";
 
     public void printDirectoryContents() {
         System.out.println("Enter full path ('quit' to exit): ");
@@ -49,18 +49,18 @@ public class DirectoryMethods {
         for (i = 0; i < filePaths.length; i++) {
             File fileForPrint = new File(usersDirectory, filePaths[i]);
             if (fileForPrint.isFile()) {
-                System.out.println(printDepthOfDirectory(depthOfDirectory) + Paths.get(usersDirectory, filePaths[i]).toString());
+                System.out.println(space + Paths.get(usersDirectory, filePaths[i]).toString());
             } else {
                 printDirectoryContents(Paths.get(usersDirectory, filePaths[i]).toString(), depthOfDirectory);
-                depthOfDirectory += 1;
+                space+= " ";
             }
         }
     }
 
-    private String printDepthOfDirectory(int depthOfDirectory) {
+/*    private String printDepthOfDirectory(int depthOfDirectory) {
         for (int i = 0; i < depthOfDirectory; i++) {
             space.concat(" ");
         }
         return space;
-    }
+    }*/
 }
