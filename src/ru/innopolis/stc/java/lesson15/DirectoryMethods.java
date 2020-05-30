@@ -1,12 +1,13 @@
 package ru.innopolis.stc.java.lesson15;
 
 import java.io.*;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
 public class DirectoryMethods {
     private static Scanner in = new Scanner(System.in);
+    private static int depthOfDirectory = 1;
+    private String space;
 
     public void printDirectoryContents() {
         System.out.println("Enter full path ('quit' to exit): ");
@@ -26,7 +27,7 @@ public class DirectoryMethods {
                         "\nNot directory: " + s);
                 continue;
             }
-            printDirectoryContents(s, 0);
+            printDirectoryContents(s, depthOfDirectory);
         }
 
     }
@@ -40,24 +41,24 @@ public class DirectoryMethods {
      */
     //сделать реализацию отступов через увеличение НЕстатичной переменной для всех экземпляров класса, передаваемой в конструктор
     //способ два
-    private void printDirectoryContents(String usersDirectory, int depthOfDirectory) {
+    private void printDirectoryContents(String usersDirectory, int depthOfDirectoryParam) {
         File directoryFile = new File(usersDirectory);
         String[] filePaths = directoryFile.list();
 
         int i;
         for (i = 0; i < filePaths.length; i++) {
             File fileForPrint = new File(usersDirectory, filePaths[i]);
-
-            System.out.println(printDepthOfDirectory(depthOfDirectory) + Paths.get(usersDirectory, filePaths[i]).toString());
-            if (fileForPrint.isDirectory()) {
-                printDirectoryContents(Paths.get(usersDirectory, filePaths[i]).toString(), depthOfDirectory+1);
+            if (fileForPrint.isFile()) {
+                System.out.println(printDepthOfDirectory(depthOfDirectory) + Paths.get(usersDirectory, filePaths[i]).toString());
+            } else {
+                printDirectoryContents(Paths.get(usersDirectory, filePaths[i]).toString(), depthOfDirectory);
+                depthOfDirectory += 1;
             }
         }
     }
 
     private String printDepthOfDirectory(int depthOfDirectory) {
-        String space = " ";
-        for (int i = depthOfDirectory; i < 0; i--) {
+        for (int i = 0; i < depthOfDirectory; i++) {
             space.concat(" ");
         }
         return space;
