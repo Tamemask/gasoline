@@ -1,6 +1,6 @@
 package ru.innopolis.stc.java.lesson16;
 
-public class Book {
+public class Book1 {
     /**
      * Есть набор объектов типа "Книга".
      * * Каждая книга имеет название, автора, год издания.

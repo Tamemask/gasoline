@@ -60,7 +60,7 @@ public class PreparatorMethods {
         log.info("пробуем удалить файл");
         file.delete();
         if (!file.exists())
-            System.out.println("Файл удален");
+            System.out.println("Файл удален " + file.toString());
     }
 
     public File getFile() {
