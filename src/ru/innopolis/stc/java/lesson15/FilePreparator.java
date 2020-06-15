@@ -13,11 +13,12 @@ public class FilePreparator {
         PreparatorMethods pm = new PreparatorMethods();
         DirectoryMethods dm = new DirectoryMethods();
 
-        pm.makeFile();
+/*        pm.makeFile();
         pm.renameFile();
         pm.copyFile();
         pm.deleteFile();
-        dm.printDirectoryContents();
+        dm.printDirectoryContents();*/
+        pm.makeDir();
 
     }
 

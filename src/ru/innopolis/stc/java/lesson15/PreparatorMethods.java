@@ -18,13 +18,14 @@ public class PreparatorMethods {
     private String fileName;
     private File file;
     private File copiedFile;
+    private String path2 = "B:\\SCUM\\dowloads2\\Innopolis_data";
 
     public File makeFile() {
         log.info("Создаем новый файл");
         System.out.println("Назовите новый файл");
 
-        file = new File(path,  in.nextLine() + ".txt");
-        try  {
+        file = new File(path, in.nextLine() + ".txt");
+        try {
             file.exists();
             file.createNewFile();
         } catch (IOException e) {
@@ -35,10 +36,21 @@ public class PreparatorMethods {
         return file;
     }
 
+    public File makeDir() {
+        log.info("Создаем новую директорию");
+
+        for (int i = 0; i < 40; i++) {
+            boolean file2 = new File(path2 + "\\lesson" + i).mkdir();
+        }
+
+        System.out.println(file + " создан");
+        return file;
+    }
+
     public void renameFile() {
         System.out.println("переименуйте файл" + file.getName());
         fileName = in.nextLine();
-        File f = new File(path, fileName +".txt");
+        File f = new File(path, fileName + ".txt");
         file.renameTo(f);
         file = f;
         System.out.println(file.getName());
@@ -46,7 +58,7 @@ public class PreparatorMethods {
 
     public void copyFile() {
         log.info("пробуем скопировать файл {} в {}", file, path3);
-        File f2 = new File (path3 + "\\" + file.getName() + ".txt");
+        File f2 = new File(path3 + "\\" + file.getName() + ".txt");
         try {
             Files.copy(file.toPath(), f2.toPath(), StandardCopyOption.REPLACE_EXISTING);
             log.info("Файл скопирован");

@@ -21,24 +21,28 @@ public class FormatingMachine {
     void Formatting() {
         try (
                 BufferedReader bfr = new BufferedReader(new FileReader(raw));
+                //FileWriter fr  = new FileWriter(salesReceipt);
                 Formatter f = new Formatter(salesReceipt)) {
-            do {
+            while ((workingString = bfr.readLine()) != null); {
                 switch (stringsAmount) {
                     case (0):
                         productName = workingString;
+                        stringsAmount +=1;
                         break;
                     case (1):
                         productAmount = Double.parseDouble(workingString);
+                        stringsAmount +=1;
                         break;
                     case (2):
                         productPrice = Double.parseDouble(workingString);
                         Formatter f2 = new Formatter();
-                        f2.format("%20s %7,2f %3,3f\n", productName, productPrice, productAmount);
+                        f.format("%20s %7,2f %3,3f\n", productName, productPrice, productAmount);
+                        //fr.write(String.valueOf(f2.format("%20s %7,2f %3,3f\n", productName, productPrice, productAmount)));
                         System.out.println(f2);
-                        stringsAmount +=1;
+                        stringsAmount = 0;
                         break;
                 }
-            } while ((workingString = bfr.readLine()) != null);
+            }
         } catch (
                 IOException e) {
             e.printStackTrace();
