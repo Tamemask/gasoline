@@ -1,4 +1,4 @@
-package ru.innopolis.stc.java.lesson21;
+package ru.innopolis.stc.java.lesson21.task1;
 
 public class MassiveHandler {
 
