@@ -5,21 +5,21 @@ public class MassiveReverser {
         int order = array.length;
         int newOrder = 0;
         int[] newArray = new int[order];
-        printMassive(array);
+        printArray(array);
         for (int i = order-1; i >= 0; i --) {
             newArray[newOrder] = array [i];
             newOrder++;
         }
         System.out.println();
-        printMassive(newArray);
+        printArray(newArray);
         for (int i = order-1; i >= 0; i --) {
             array [i] = newArray[i];
         }
         System.out.println();
-        printMassive(array);
+        printArray(array);
     }
 
-    public void printMassive(int[] array) {
+    public void printArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + "\t");
         }
