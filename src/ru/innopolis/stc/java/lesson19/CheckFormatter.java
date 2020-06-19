@@ -7,6 +7,8 @@ public class CheckFormatter {
         FormatingMachine fm = new FormatingMachine();
         fm.Formatting();
 
+
+
 /*// вывод в 12-часовом временном формате
         f.format("%tr", cal);
         System.out.println(f);

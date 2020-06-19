@@ -12,6 +12,8 @@ import java.util.Formatter;
 public class FormatingMachine {
     File raw = new File("B:\\SCUM\\dowloads2\\Fridge\\products.txt");
     File salesReceipt = new File("B:\\SCUM\\dowloads2\\Fridge\\out.txt");
+    String separator = "================================================";
+    String multiplicatorSymbol = " х ";
     String workingString;
     String productName = null;
     double productAmount = 0;
@@ -19,11 +21,14 @@ public class FormatingMachine {
     int stringsAmount = 0;
 
     void Formatting() {
-        try (
-                BufferedReader bfr = new BufferedReader(new FileReader(raw));
-                //FileWriter fr  = new FileWriter(salesReceipt);
-                Formatter f = new Formatter(salesReceipt)) {
-            while ((workingString = bfr.readLine()) != null); {
+
+        try (FileWriter fr  = new FileWriter(salesReceipt);
+             Formatter f = new Formatter(fr)) {
+            File myObj = new File("B:\\SCUM\\dowloads2\\Fridge\\products.txt");
+            Scanner myReader = new Scanner(myObj);
+            fr.write(separator);
+            while (myReader.hasNextLine()) {
+                String workingString = myReader.nextLine();
                 switch (stringsAmount) {
                     case (0):
                         productName = workingString;
@@ -35,16 +40,19 @@ public class FormatingMachine {
                         break;
                     case (2):
                         productPrice = Double.parseDouble(workingString);
-                        Formatter f2 = new Formatter();
-                        f.format("%20s %7,2f %3,3f\n", productName, productPrice, productAmount);
-                        //fr.write(String.valueOf(f2.format("%20s %7,2f %3,3f\n", productName, productPrice, productAmount)));
-                        System.out.println(f2);
+                        //fr.write(String.valueOf(f.format("%20s %7.2f %3.3f\n", productName, productPrice, productAmount)));
+                        f.format("%20s %7.2f %s %3.3f %7.2f\n", productName, productPrice, multiplicatorSymbol, productAmount, productPrice*productAmount);
+                        //System.out.println(f.format("%20s %7.2f %3.3f\n", productName, productPrice, productAmount));
                         stringsAmount = 0;
                         break;
                 }
             }
-        } catch (
-                IOException e) {
+            fr.write(separator);
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
